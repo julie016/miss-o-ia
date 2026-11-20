@@ -1,4 +1,4 @@
-import {respostas, nome} from './respostas.js';
+import {aleatorio, nome} from './respostas.js';
 import {perguntas} from './perguntas.js';
 
 const caixaPrincipal = document.querySelector(".caixa-principal");
@@ -15,6 +15,16 @@ let perguntaAtual;
 let historiaFinal = "";
 
 botaoIniciar.addEventListener('click', iniciaJogo);
+
+function iniciaJogo() {
+    atual = 0;
+    historiaFinal = "";
+    telaInicial.style.display = 'none';
+    caixaPerguntas.classList.remove("mostrar");
+    caixaAlternativas.classList.remove("mostrar");
+    caixaResultado.classList.remove("mostrar");
+    mostraPergunta();
+}
 
 function mostraPergunta() {
     if(atual >= perguntas.length){
